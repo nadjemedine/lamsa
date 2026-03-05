@@ -6,12 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>لمسة أناقة</title>
 
-  <!-- أيقونة ومشاركة الرابط (Open Graph) -->
-  <link rel="icon" href="logo.png" type="image/png">
-  <meta property="og:title" content="لمسة أناقة">
-  <meta property="og:description" content="مرحبا بكم في متجر لمسة أناقة - أناقة لا حدود لها وجودة استثنائية.">
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="متجر لمسة أناقة - وجهتك الأولى في الجزائر للأزياء الراقية، القفاطين، والفساتين الفاخرة التي تجمع بين التراث والحداثة.">
+  <meta name="keywords"
+    content="متجر لمسة أناقة, أزياء جزائرية, قفطان جزائري, فساتين سهرة, ملابس نسائية فاخرة, تسوق إلكتروني الجزائر, روبة جزائرية">
+  <meta name="author" content="لمسة أناقة">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lamsaanaka.dz/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="لمسة أناقة - أناقة لا حدود لها وجودة استثنائية">
+  <meta property="og:description"
+    content="اكتشفي تشكيلتنا الحصرية من القفاطين والفساتين الراقية في متجر لمسة أناقة. جودة استثنائية وتصاميم فريدة.">
   <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="https://lamsaanaka.dz/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="لمسة أناقة">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="لمسة أناقة - أزياء جزائرية راقية">
+  <meta name="twitter:description" content="تسوقي الآن أرقى الفساتين والقفاطين الجزائرية بجودة عالية.">
+  <meta name="twitter:image" content="logo.png">
+
+  <!-- JSON-LD Structured Data for Local Business & Shop -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "لمسة أناقة",
+      "image": "https://lamsaanaka.dz/logo.png",
+      "description": "أرقى تصاميم القفاطين والفساتين الجزائرية في متجر لمسة أناقة.",
+      "url": "https://lamsaanaka.dz/",
+      "telephone": "05xxxxxxxx",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "الجزائر",
+        "addressCountry": "DZ"
+      },
+      "priceRange": "4000DA - 9000DA"
+    }
+  </script>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Tajawal:wght@300;400;500;700&display=swap"
     rel="stylesheet">
@@ -38,6 +74,21 @@
       background: var(--white);
       color: var(--black);
       min-height: 100vh;
+    }
+
+    /* Speed Optimizations */
+    .fade-in-img {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      will-change: opacity;
+    }
+
+    .fade-in-img.loaded {
+      opacity: 1;
+    }
+
+    img {
+      content-visibility: auto;
     }
 
     /* ===== TICKER ===== */
@@ -609,6 +660,24 @@
       border-color: var(--gold);
       background: var(--black);
       color: var(--gold);
+    }
+
+    .color-opt {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.2s;
+      background-color: var(--gray-light);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .color-opt:hover,
+    .color-opt.active {
+      border-color: var(--gold);
+      transform: scale(1.15);
     }
 
     .desc-section {
@@ -1280,6 +1349,12 @@
         </svg>
         صفحتنا
       </a>
+      <div style="font-size: 15px; margin-top: 12px; font-weight: 700; color: var(--gold);">من نحن</div>
+      <p
+        style="font-size: 13px; color: #ddd; max-width: 350px; margin: 6px auto 0; line-height: 1.7; font-weight: 400;">
+        "لمسة أناقة" هو متجر جزائري رائد يسعى لتقديم أرقى تصاميم الأزياء التي تجمع بين الفخامة والروعة. نحن نهتم بكل
+        تفصيلة لتبرز جمالكِ بقطع فريدة تعكس ذوقك الرفيع، لنكون شريككِ الدائم في كل إطلالة متميزة.
+      </p>
     </div>
     <div style="color: #666; font-size: 13px;">
       <div></div>Copyright © 2026 لمسة اناقة
@@ -1307,13 +1382,24 @@
     ];
 
     const products = [
-      { id: 1, name: "Robe Elegance", price: 4800, sizes: ["S", "M", "L", "XL", "XXL"], desc: "فستان أنيق مصنوع من أجود أنواع الأقمشة، يجمع بين الكلاسيكية والحداثة. مثالي للمناسبات الخاصة والسهرات الراقية.", img: "image1.png", subImgs: ["image1a.png", "image1b.png", "image1c.png", "image1d.png", "image1e.png", "image1f.png"] },
-      { id: 2, name: "Robe Modern", price: 6500, sizes: ["S", "M", "L", "XL", "XXL"], desc: "عباءة فاخرة مزينة بتطريز ذهبي يدوي، تعكس الذوق الرفيع والإتقان في التفاصيل.", img: "image2.png", subImgs: ["image2a.png", "image2b.png", "image2c.png", "image2d.png", "image2e.png", "image2f.png"] },
-      { id: 3, name: "Robe Chic", price: 3200, sizes: ["S", "M", "L", "XL", "XXL"], desc: "طقم صيفي خفيف ومريح، مصمم لتمنحك إطلالة مثالية في أي وقت من النهار.", img: "image3.png", subImgs: ["image3a.png", "image3b.png", "image3c.png", "image3d.png", "image3e.png", "image3f.png"] },
+      { id: 1, name: "Caftan Elegance", price: 6500, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "خمري", img: "image1.png", hex: "#800020" }, { name: "أسود", img: "image1a.png", hex: "#111111" }, { name: "زيتوني", img: "image1b.png", hex: "#6B6B1E" }, { name: "أخضر داكن", img: "image1c.png", hex: "#2F5240" }, { name: "بيج ذهبي", img: "image1d.png", hex: "#C9A84C" }, { name: "أزرق", img: "image1e.png", hex: "#1A3A8C" }, { name: "بنفسجي", img: "image1f.png", hex: "#8B1A6B" }], desc: "قفطان جزائري أنيق مصنوع من أجود الأقمشة الفاخرة.\nنقوشات ذهبية لامعة تعكس الذوق الرفيع والإتقان.\nتصميم محكم يبرز القوام بأجمل صورة.\nمثالي للمناسبات الخاصة والحفلات الراقية.", img: "image1.png", subImgs: ["image1a.png", "image1b.png", "image1c.png", "image1d.png", "image1e.png", "image1f.png"] },
+      { id: 2, name: "Caftan Modern", price: 6500, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "أخضر زمردي", img: "image2.png", hex: "#1A5C3A" }, { name: "بيج ذهبي", img: "image2a.png", hex: "#C9A870" }, { name: "أسود", img: "image2b.png", hex: "#111111" }, { name: "أخضر داكن", img: "image2c.png", hex: "#2F5240" }, { name: "أزرق ملكي", img: "image2d.png", hex: "#1A3A8C" }, { name: "بيج فاتح", img: "image2e.png", hex: "#E8DCC8" }, { name: "رمادي فضي", img: "image2f.png", hex: "#9E9E9E" }], desc: "قفطان فاخر بتطريز زهري ذهبي باهر ومتقن.\nقماش ناعم الملمس يضفي أناقة لا تضاهى.\nتصميم واسع مريح يناسب جميع القامات.\nخيار مميز للأعراس والمناسبات الكبرى.", img: "image2.png", subImgs: ["image2a.png", "image2b.png", "image2c.png", "image2d.png", "image2e.png", "image2f.png"] },
+      { id: 3, name: "Robe Chic", price: 4400, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "خمري", img: "image3.png", hex: "#800020" }, { name: "أزرق داكن", img: "image3a.png", hex: "#1A2E6C" }, { name: "خمري (كلوز)", img: "image3b.png", hex: "#6B0020" }, { name: "أسود", img: "image3c.png", hex: "#111111" }, { name: "بنفسجي", img: "image3d.png", hex: "#5B1A6B" }, { name: "بترولي", img: "image3e.png", hex: "#1A5C6B" }, { name: "أخضر داكن", img: "image3f.png", hex: "#1A5C3A" }], desc: "روبة مخملية فاخرة بتطريز ماسي ساحر يلفت الأنظار.\nقماش مخمل دافئ ناعم الملمس عالي الجودة.\nتصميم أنيق يناسب مختلف المناسبات والسهرات.\nحزام مريح يمنح مظهراً متكاملاً ومتناسقاً.", img: "image3.png", subImgs: ["image3a.png", "image3b.png", "image3c.png", "image3d.png", "image3e.png", "image3f.png"] },
+      { id: 4, name: "Robe Royal", price: 4200, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "أزرق ملكي", img: "image4.png", hex: "#1A3A8C" }, { name: "خمري", img: "image4a.png", hex: "#800020" }, { name: "بنفسجي غامق", img: "image4b.png", hex: "#4A1050" }, { name: "أسود", img: "image4c.png", hex: "#111111" }, { name: "أزرق داكن", img: "image4e.png", hex: "#0D2B55" }], desc: "روبة مخملية راقية بأكمام شفافة تضفي لمسة من الجمال.\nتطريز فضي مبهر على الأكتاف يمنحك مظهراً ملكياً.\nتصميم عصري يجمع بين الكلاسيك والأناقة الحديثة.\nمثالي للسهرات والحفلات الجزائرية الراقية.", img: "image4.png", subImgs: ["image4a.png", "image4b.png", "image4c.png", "image4e.png"] },
+      { id: 5, name: "Robe Classique", price: 5500, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "أزرق ملكي", img: "image5.png", hex: "#1A3A8C" }, { name: "خمري", img: "image5a.png", hex: "#800020" }, { name: "أزرق داكن", img: "image5b.png", hex: "#0D2B55" }, { name: "بترولي", img: "image5c.png", hex: "#1A5C6B" }, { name: "أخضر داكن", img: "image5d.png", hex: "#1A5C3A" }], desc: "روبة مخملية بتطريز سلسلة جانبي دقيق ومتقن.\nقماش مخمل فاخر ناعم الملمس ومريح طوال اليوم.\nقصة مستقيمة أنيقة تناسب جميع أنواع القامات.\nيجمع البساطة والفخامة في تصميم واحد مميز.", img: "image5.png", subImgs: ["image5a.png", "image5b.png", "image5c.png", "image5d.png"] },
+      { id: 6, name: "Caftan Princesse", price: 5900, sizes: ["S", "M", "L", "XL", "XXL"], colors: [{ name: "أخضر زمردي", img: "image6.png", hex: "#1A5C3A" }, { name: "خمري", img: "image6a.png", hex: "#800020" }, { name: "بنفسجي غامق", img: "image6b.png", hex: "#2E0845" }, { name: "أسود", img: "image6c.png", hex: "#111111" }, { name: "أزرق داكن", img: "image6d.png", hex: "#0D2B55" }, { name: "أزرق ملكي", img: "image6e.png", hex: "#1A3A8C" }], desc: "قفطان أصيل بتطريز ذهبي فاخر على الحواف والأطراف.\nأقمشة عالية الجودة مع زخارف مصنوعة بدقة متناهية.\nتصميم واسع ومريح يناسب مختلف الأجساد.\nيجمع الأصالة الجزائرية والفخامة في إطلالة واحدة.", img: "image6.png", subImgs: ["image6a.png", "image6b.png", "image6c.png", "image6d.png", "image6e.png"] },
+      { id: 7, name: "Robe Lamsa", price: 4500, sizes: ["S", "M", "L", "XL", "XXL"], desc: "روبة جريئة بطبعة نمرية فاخرة لافتة للنظر.\nخامة ناعمة مريحة مع تفاصيل ذهبية مضيئة.\nتصميم فضفاض مريح بأكمام واسعة أنيقة.\nإطلالة عصرية مميزة تناسب من تحب الجرأة.", img: "image7.png", subImgs: ["image7a.png", "image7b.png"] },
+      { id: 8, name: "Robe Été", price: 3900, sizes: ["S", "M", "L", "XL", "XXL"], desc: "روبة عصرية بطبعة نمرية راقية ومتميزة.\nخامة ناعمة مريحة تناسب الاستخدام اليومي والمناسبات.\nتصميم متعدد الاستخدامات يناسب مختلف الأجساد.\nحزام أنيق يمنح إطلالة متكاملة ومميزة.", img: "image8.png", subImgs: ["image8a.png", "image8b.png"] },
+      { id: 9, name: "Robe Soirée", price: 3900, sizes: ["S", "M", "L", "XL", "XXL"], desc: "روبة أنيقة بطبعة نمرية فاخرة ومميزة.\nخامة عالية الجودة ناعمة الملمس ومريحة.\nتصميم واسع مع أكمام فضفاضة تضيف الأناقة.\nإطلالة فريدة تجمع الأنوثة والجرأة في آنٍ واحد.", img: "image9.png", subImgs: ["image9a.png", "image9b.png"] }
     ];
 
-    let cart = [];
+    let cart = JSON.parse(localStorage.getItem('lamsa_cart')) || [];
     let currentProduct = null;
+
+    function saveCart() {
+      localStorage.setItem('lamsa_cart', JSON.stringify(cart));
+      updateCartBadge();
+    }
 
     // ===== UTILS =====
     function showPage(name) {
@@ -1338,13 +1424,13 @@
       setTimeout(() => badge.classList.remove('bump'), 300);
     }
 
-    function addToCart(productId, size, qty = 1) {
+    function addToCart(productId, size, qty = 1, colorObj = null) {
       const p = products.find(x => x.id === productId);
       if (!p) return;
-      const existing = cart.find(i => i.id === productId && i.size === size);
+      const existing = cart.find(i => i.id === productId && i.size === size && (!i.color || (colorObj && i.color.name === colorObj.name)));
       if (existing) existing.qty += qty;
-      else cart.push({ ...p, size, qty });
-      updateCartBadge();
+      else cart.push({ ...p, size, qty, color: colorObj });
+      saveCart();
       showToast('✦ تمت الإضافة للسلة');
     }
 
@@ -1358,22 +1444,21 @@
       // simple filter - could be expanded
     }
 
-    // ===== IMAGE HELPER =====
-    function imgOrPlaceholder(src, cls = '', style = '') {
-      return `<img src="${src}" class="${cls}" style="${style}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="">
+    function imgOrPlaceholder(src, alt = '', cls = '', style = '', priority = 'auto') {
+      const isLazy = priority === 'lazy' ? 'loading="lazy"' : '';
+      const isHigh = priority === 'high' ? 'fetchpriority="high"' : '';
+      return `<img src="${src}" class="${cls} fade-in-img" style="${style}" ${isLazy} ${isHigh} onload="this.classList.add('loaded')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" alt="${alt}">
   <div class="img-placeholder" style="display:none;${style}">
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-    <span>${src}</span>
   </div>`;
     }
 
-    // ===== RENDER SHOP =====
     function renderShop() {
       const grid = document.getElementById('products-grid');
-      grid.innerHTML = products.map(p => `
+      grid.innerHTML = products.map((p, index) => `
     <div class="product-card" onclick="openProduct(${p.id})">
       <div class="card-img-wrap">
-        ${imgOrPlaceholder(p.img)}
+        ${imgOrPlaceholder(p.img, p.name, '', '', index < 4 ? 'high' : 'lazy')}
         <button class="add-to-cart-btn" onclick="event.stopPropagation();quickAdd(${p.id})" title="إضافة للسلة">
           <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         </button>
@@ -1388,7 +1473,8 @@
 
     function quickAdd(id) {
       const p = products.find(x => x.id === id);
-      addToCart(id, p.sizes[0]);
+      const colorObj = p.colors ? p.colors[0] : null;
+      addToCart(id, p.sizes[0], 1, colorObj);
     }
 
     // ===== RENDER PRODUCT =====
@@ -1397,15 +1483,28 @@
       if (!currentProduct) return;
 
       let selectedSize = currentProduct.sizes[0];
+      let selectedColor = currentProduct.colors ? currentProduct.colors[0] : null;
       let qty = 1;
 
-      const subImgsHtml = currentProduct.subImgs.map((s, i) => `
+      const allImgs = [currentProduct.img, ...currentProduct.subImgs];
+      const subImgsHtml = allImgs.map((s, i) => `
     <img src="${s}" class="sub-img-thumb${i === 0 ? ' active' : ''}" onclick="switchMainImg('${s}',this)" onerror="this.style.display='none'" alt="">
   `).join('');
 
       const sizesHtml = currentProduct.sizes.map(s => `
     <button class="size-opt${s === selectedSize ? ' active' : ''}" onclick="selectSize(this,'${s}')">${s}</button>
   `).join('');
+
+      const colorsHtml = currentProduct.colors ? `
+    <div class="size-section">
+      <span class="size-label" style="display:flex;align-items:center;gap:6px;">اللون: <span id="selected-color-name" style="color:var(--black);font-size:14px;font-weight:700;letter-spacing:0;text-transform:none;">${selectedColor.name}</span></span>
+      <div class="sizes" id="color-opts">
+        ${currentProduct.colors.map(c => `
+          <button class="color-opt${c === selectedColor ? ' active' : ''}" style="background-color: ${c.hex || '#ccc'}" onclick="selectColor(this, '${c.img}', '${c.name}')" title="${c.name}" data-img="${c.img}"></button>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
 
       document.getElementById('product-detail').innerHTML = `
     <div style="position:relative">
@@ -1421,7 +1520,8 @@
       <span class="size-label">المقاس</span>
       <div class="sizes" id="size-opts">${sizesHtml}</div>
     </div>
-    <div class="desc-section">${currentProduct.desc}</div>
+    ${colorsHtml}
+    <div class="desc-section">${currentProduct.desc.replace(/\n/g, '<br>')}</div>
     <div class="qty-cart-row">
       <div class="qty-wrap">
         <button onclick="changeQty(-1)">−</button>
@@ -1451,6 +1551,7 @@
 
       showPage('product');
       window._selectedSize = selectedSize;
+      window._selectedColor = selectedColor;
       window._qty = qty;
     }
 
@@ -1459,12 +1560,40 @@
       el.classList.add('active');
       const main = document.getElementById('main-product-img');
       if (main) main.src = src;
+
+      if (currentProduct && currentProduct.colors) {
+        const color = currentProduct.colors.find(c => c.img === src);
+        if (color) {
+          window._selectedColor = color;
+          const colorNameDisp = document.getElementById('selected-color-name');
+          if (colorNameDisp) colorNameDisp.textContent = color.name;
+          document.querySelectorAll('.color-opt').forEach(b => {
+            b.classList.remove('active');
+            if (b.getAttribute('data-img') === src) b.classList.add('active');
+          });
+        }
+      }
     }
 
     function selectSize(el, size) {
       document.querySelectorAll('.size-opt').forEach(b => b.classList.remove('active'));
       el.classList.add('active');
       window._selectedSize = size;
+    }
+
+    function selectColor(el, imgUrl, name) {
+      document.querySelectorAll('.color-opt').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      window._selectedColor = { name: name, img: imgUrl };
+      const main = document.getElementById('main-product-img');
+      if (main) main.src = imgUrl;
+      const colorNameDisp = document.getElementById('selected-color-name');
+      if (colorNameDisp) colorNameDisp.textContent = name;
+
+      document.querySelectorAll('.sub-img-thumb').forEach(t => {
+        t.classList.remove('active');
+        if (t.getAttribute('src') === imgUrl) t.classList.add('active');
+      });
     }
 
     function changeQty(delta) {
@@ -1475,7 +1604,7 @@
 
     function addFromDetail() {
       if (!currentProduct) return;
-      addToCart(currentProduct.id, window._selectedSize || currentProduct.sizes[0], window._qty || 1);
+      addToCart(currentProduct.id, window._selectedSize || currentProduct.sizes[0], window._qty || 1, window._selectedColor || (currentProduct.colors ? currentProduct.colors[0] : null));
     }
 
     // ===== RENDER CART =====
@@ -1499,7 +1628,7 @@
       <img src="${item.img}" class="cart-item-img" onerror="this.src=''" alt="">
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-size">المقاس: ${item.size}</div>
+        <div class="cart-item-size">المقاس: ${item.size}${item.color ? ` | اللون: ${item.color.name}` : ''}</div>
         <div class="cart-item-price">${(item.price * item.qty).toLocaleString('ar')} دج</div>
         <div class="cart-qty-wrap">
           <button onclick="cartQty(${idx},-1)">−</button>
@@ -1520,26 +1649,26 @@
       <div class="form-row">
         <div class="form-group">
           <label>الاسم الكامل</label>
-          <input type="text" id="f-name" placeholder="مثال: فاطمة بن علي">
+          <input type="text" id="f-name" placeholder="مثال: فاطمة بن علي" value="${localStorage.getItem('saved_name') || ''}" oninput="localStorage.setItem('saved_name', this.value)">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>رقم الهاتف</label>
-          <input type="tel" id="f-phone" placeholder="05xxxxxxxx">
+          <input type="tel" id="f-phone" placeholder="05xxxxxxxx" value="${localStorage.getItem('saved_phone') || ''}" oninput="localStorage.setItem('saved_phone', this.value)">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>الولاية</label>
-          <select id="f-wilaya">
+          <select id="f-wilaya" onchange="localStorage.setItem('saved_wilaya', this.value)">
             <option value="">اختر الولاية</option>
-            ${wilayas.map(w => `<option>${w}</option>`).join('')}
+            ${wilayas.map(w => `<option ${localStorage.getItem('saved_wilaya') === w ? 'selected' : ''}>${w}</option>`).join('')}
           </select>
         </div>
         <div class="form-group">
           <label>البلدية</label>
-          <input type="text" id="f-commune" placeholder="البلدية">
+          <input type="text" id="f-commune" placeholder="البلدية" value="${localStorage.getItem('saved_commune') || ''}" oninput="localStorage.setItem('saved_commune', this.value)">
         </div>
       </div>
       <div style="margin-bottom:8px"><span class="size-label" style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#888;display:block;margin-bottom:10px">طريقة التوصيل</span></div>
@@ -1555,7 +1684,7 @@
         <div class="form-title" style="font-size:16px;margin-bottom:12px">ملخص الطلب</div>
         ${cart.map(i => `
           <div class="summary-row">
-            <span>${i.name} × ${i.qty} <small style="color:#aaa">(${i.size})</small></span>
+            <span>${i.name} × ${i.qty} <small style="color:#aaa">(${i.size}${i.color ? ` - ${i.color.name}` : ''})</small></span>
             <span>${(i.price * i.qty).toLocaleString('ar')} دج</span>
           </div>
         `).join('')}
@@ -1577,13 +1706,13 @@
 
     function cartQty(idx, delta) {
       cart[idx].qty = Math.max(1, cart[idx].qty + delta);
-      updateCartBadge();
+      saveCart();
       renderCart();
     }
 
     function removeCartItem(idx) {
       cart.splice(idx, 1);
-      updateCartBadge();
+      saveCart();
       renderCart();
     }
 
@@ -1603,11 +1732,12 @@
         return;
       }
       cart = [];
-      updateCartBadge();
+      saveCart();
       showPage('thankyou');
     }
 
     // ===== INIT =====
+    updateCartBadge();
     renderShop();
   </script>
 </body>
